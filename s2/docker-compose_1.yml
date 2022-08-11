@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./confs/nginx_1.conf:/etc/nginx/nginx.conf
+      - ./static_files:/var/www/html
+
+  backend1:
+    image: python:3.10.0a7-alpine3.13
+    command: "python main.py"
+    volumes:
+      - ./backends/main.py:/main.py
+      - ./backends/1/index.html:/index.html
+  backend2:
+    image: python:3.10.0a7-alpine3.13
+    command: "python main.py"
+    volumes:
+      - ./backends/main.py:/main.py
+      - ./backends/2/index.html:/index.html

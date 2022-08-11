@@ -1,0 +1,4 @@
+# 1: nginx_1.conf
+curl http://127.0.0.1/backends
+
+
