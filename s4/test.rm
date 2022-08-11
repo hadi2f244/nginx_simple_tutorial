@@ -1,0 +1,4 @@
+sudo sh -c "echo -n 'hadi:' >> confs/pass/.htpasswd"
+sudo sh -c "openssl passwd -apr1 >> confs/pass/.htpasswd"
+sudo apt-get install apache2-utils
+sudo htpasswd -c confs/pass/.htpasswd hadi

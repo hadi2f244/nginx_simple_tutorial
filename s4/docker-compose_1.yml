@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./confs/nginx_1.conf:/etc/nginx/nginx.conf
+      - ./static_files:/var/www/html
+      - ./conf/pass:/etc/nginx/pass
